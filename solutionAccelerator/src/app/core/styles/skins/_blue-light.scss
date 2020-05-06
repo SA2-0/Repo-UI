@@ -1,0 +1,71 @@
+@import "../global-import.scss";
+
+$sa-primary: (
+  100: theme-color("primary-light"),
+  500: theme-color("primary"),
+  700: theme-color("primary-dark"),
+  contrast: (
+    50: #333333,
+    100: #333333,
+    200: #333333,
+    300: #333333,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #333333,
+    A200: #333333,
+    A400: #333333,
+    A700: #333333
+  )
+);
+
+$sa-accent: (
+  100: theme-color("secondary-light"),
+  500: theme-color("secondary"),
+  700: theme-color("secondary-dark"),
+  contrast: (
+    50: #333333,
+    100: #333333,
+    200: #333333,
+    300: #333333,
+    400: #333333,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #333333,
+    A200: #333333,
+    A400: #333333,
+    A700: #333333
+  )
+);
+$sa-red: (
+  100: theme-color("danger-light"),
+  500: theme-color("danger"),
+  700: theme-color("danger-dark"),
+  contrast: (
+    50: #333333,
+    100: #333333,
+    200: #333333,
+    300: #333333,
+    400: #333333,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #333333,
+    A200: #333333,
+    A400: #333333,
+    A700: #333333
+  )
+);
+$sa-theme-primary: mat-palette($sa-primary);
+$sa-theme-accent: mat-palette($sa-accent);
+$sa-theme-warn: mat-palette($sa-red);
+
+$sa-theme: mat-light-theme($sa-theme-primary, $sa-theme-accent, $sa-theme-warn);

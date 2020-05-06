@@ -1,0 +1,31 @@
+@import "./global-import.scss";
+
+@mixin theme-reset($theme) {
+  $primaryColor: map-get($theme, primary);
+  $accentColor: map-get($theme, accent);
+  $warnColor: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  .bg-primary {
+    @include _mat-toolbar-color($primaryColor);
+  }
+  .bg-accent {
+    @include _mat-toolbar-color($accentColor);
+  }
+  .bg-warn {
+    @include _mat-toolbar-color($warnColor);
+  }
+  .muted-text {
+    color: mat-color($foreground, secondary-text);
+  }
+  .mat-form-field-required-marker {
+    color: mat-color($warnColor)
+  }
+}
+
+.sa-theme-btn-large.mat-button-base {
+  text-transform: capitalize;
+  padding-top: rem(7px);
+  padding-bottom: rem(7px);
+}

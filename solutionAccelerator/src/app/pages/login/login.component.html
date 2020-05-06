@@ -1,0 +1,16 @@
+<div class="login-box bg-primary  px-2" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card>
+        <form>
+            <mat-form-field class="w-100" [floatLabel]="'always'">
+                <mat-label>User Name</mat-label>
+                <input matInput placeholder="Enter your email">
+            </mat-form-field>
+            <mat-form-field class="w-100" [floatLabel]="'always'">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput placeholder="Enter your password">
+            </mat-form-field>
+            <a [routerLink]="['/flow']" mat-raised-button color="accent">Submit</a>
+        </form>
+    </mat-card>
+</div>
+

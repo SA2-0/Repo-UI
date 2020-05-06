@@ -1,0 +1,24 @@
+<div [formGroup]="form">
+
+    <mat-form-field [ngSwitch]="field.type" class="w-100" [floatLabel]="'always'">
+        <mat-label [attr.for]="field.name">{{field.label}}</mat-label>
+
+        <input *ngSwitchCase="'string'" matInput [formControlName]="field.name" [id]="field.name" [type]="'text'"
+            required>
+
+        <input *ngSwitchCase="'secureString'" matInput [formControlName]="field.name" [id]="field.name"
+            [type]="'password'" required>
+
+        <mat-select *ngSwitchCase="'selectString'" [formControlName]="field.name" required>
+            <mat-option *ngFor="let opt of field.allowedValues" [value]="opt">
+                {{opt}}
+            </mat-option>
+        </mat-select>
+        <!-- <mat-error *ngIf="!isValid"> -->
+        <mat-error *ngIf="isRequired">{{field.name}} is required</mat-error>
+        <mat-error *ngIf="isPatternInvalid">{{field.errorMsg}}</mat-error>
+        <!-- </mat-error> -->
+        <!-- <mat-error >{{patternError}}</mat-error> -->
+    </mat-form-field>
+    
+</div>

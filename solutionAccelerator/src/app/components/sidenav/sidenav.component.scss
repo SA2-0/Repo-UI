@@ -1,0 +1,47 @@
+@import "global-import.scss";
+
+mat-toolbar {
+  background-color: theme-color(primary-dark);
+  color: #fff;
+  box-shadow: $toolbar-shadow;
+}
+:host { 
+  font-size: rem(15px);
+}
+
+.filter-sections {
+  margin-top: 20px;
+  & + & {
+    margin-top: rem(30px);
+  }
+  h3 {
+    font-size: 12px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: theme-color(primary-light);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.filter-group {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  .mat-button-toggle-group,
+  .mat-button-toggle {
+    flex-grow: 1;
+    border-color: #fff;
+    color: #fff;
+  }
+
+  .mat-button-toggle {
+    background-color: rgba(theme-color(primary), 1);
+  }
+  .mat-button-toggle.mat-button-toggle-checked {
+    background-color: rgba(#ffffff, 0.25);
+  }
+  .mat-button-toggle-standalone.mat-button-toggle-appearance-standard, .mat-button-toggle-group-appearance-standard{
+    border-radius: 7px;
+  }
+  
+}

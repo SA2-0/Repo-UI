@@ -1,0 +1,37 @@
+$primary: #43425d;
+$secondary: #3b86ff;
+$warning: #ffc107;
+$danger: #ff5670;
+$info: #17a2b8;
+$success: #28a745;
+$grid-gutter-width: 16px;
+
+$theme-colors: (
+  "primary": $primary,
+  "primary-light": #a5a4bf,
+  "primary-dark": #3b3a53,
+  "secondary": $secondary,
+  "secondary-light": lighten($secondary, 10%),
+  "secondary-dark": darken($secondary, 10%),
+  "warning": $warning,
+  "warning-light": lighten($warning, 10%),
+  "warning-dark": darken($warning, 10%),
+  "danger": $danger,
+  "danger-light": lighten($danger, 10%),
+  "danger-dark": darken($danger, 10%),
+  "info": $info,
+  "success": $success
+);
+
+$flex-distance: 8px;
+$inner-sidenav-content-padding: $flex-distance;
+
+//Login, Register, Errors box
+$box-height: 186px;
+$box-position: 34px;
+$register-box-height: 300px;
+
+$sidenav-width: 260px;
+$toolbar-shadow: 0 2px 9px rgba(0, 0, 0, 0.25);
+$toolbar-color: #bcbccb;
+$toolbar-height: 64px;

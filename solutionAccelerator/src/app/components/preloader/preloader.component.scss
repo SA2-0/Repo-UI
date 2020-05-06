@@ -1,0 +1,21 @@
+:host {
+  position: fixed;
+  background-color: rgba($color: #fff, $alpha: 0.6);
+  color: #333;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+svg {
+  width: 70px;
+  height: 70px;
+}
+span {
+  margin-top: -16px;
+}

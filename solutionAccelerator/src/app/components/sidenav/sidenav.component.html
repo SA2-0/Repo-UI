@@ -1,0 +1,50 @@
+<perfect-scrollbar class="sidenav-menu-outer">
+    <div class="filter-sections">
+        <h3>Select Cloud Service</h3>
+        <div class="filter-group">
+            <mat-button-toggle-group #group="matButtonToggleGroup">
+                <mat-button-toggle value="azure" class="test" aria-label="Text align left">
+                    Azure
+                </mat-button-toggle>
+                <mat-button-toggle value="aws" aria-label="Text align center">
+                    AWS
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+    </div>
+
+    <div class="filter-sections">
+        <h3 id="select-process">Select</h3>
+        <div class="filter-group">
+            <mat-radio-group aria-labelledby="select-process" class="radio-group-stacked" [(ngModel)]="processType">
+                <mat-radio-button class="light-form-control" *ngFor="let process of processList" [value]="process">
+                    {{process}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
+
+    <div class="filter-sections">
+        <h3 id="select-ingestionType">Select Ingestion Type</h3>
+        <div class="filter-group">
+            <mat-radio-group aria-labelledby="select-ingestionType" class="radio-group-stacked"
+                [(ngModel)]="ingestionType">
+                <mat-radio-button class="light-form-control" *ngFor="let ingestion of ingestionList"
+                    [value]="ingestion">
+                    {{ingestion}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
+
+    <div class="filter-sections">
+        <h3 id="select-ingestionType">Select Data Type</h3>
+        <div class="filter-group">
+            <mat-radio-group aria-labelledby="select-ingestionType" class="radio-group-stacked" [(ngModel)]="dataType">
+                <mat-radio-button class="light-form-control" *ngFor="let dt of dataTypeList" [value]="dt">
+                    {{dt}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
+</perfect-scrollbar>

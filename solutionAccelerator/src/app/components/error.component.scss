@@ -1,0 +1,10 @@
+@import "global-import";
+:host {
+  display: inline-block;
+}
+.error-block {
+  font-size: 80%;
+  display: inline-block;
+  color: theme-color("danger");
+  margin-top: 5px;
+}

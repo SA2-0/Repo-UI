@@ -1,0 +1,18 @@
+<app-header></app-header>
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened class="sidenav" fixedInViewport="true" fixedTopGap="64">
+        <app-sidenav></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content id="main" perfectScrollbar>
+
+        <div id="main-content" class="inner-sidenav-content transition-2">
+
+            <!-- <app-breadcrumb></app-breadcrumb> -->
+            <router-outlet></router-outlet>
+        </div>
+
+
+    </mat-sidenav-content>
+
+
+</mat-sidenav-container>

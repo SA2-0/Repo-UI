@@ -1,0 +1,22 @@
+@import "global-import.scss";
+
+mat-sidenav {
+  background-color: theme-color(primary);
+  color: #fff;
+}
+
+mat-sidenav-container {
+  background-color: #f0f0f7;
+}
+.sidenav {
+  width: $sidenav-width;
+  overflow: hidden;
+  border: none !important;
+}
+.inner-sidenav-content {
+  padding: rem(30px);
+
+  @include media-breakpoint-only(xl) {
+    padding: rem(59px);
+  }
+}

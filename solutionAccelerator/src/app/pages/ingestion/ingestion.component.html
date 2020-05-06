@@ -1,0 +1,53 @@
+<mat-card class="custom-card">
+    <form name="dataSourceForm" [formGroup]="dataSourceForm" novalidate (ngSubmit)="fetchAttribute()">
+        <div fxLayout="column" fxLayout.gt-md="row wrap" fxLayoutAlign.gt-md="center center" fxLayoutGap="15px">
+            <div fxFlex="auto">
+                <mat-form-field class="w-100" [floatLabel]="'always'">
+                    <mat-label>Source Type</mat-label>
+                    <mat-select placeholder="Please select source type" formControlName="sourceType" required
+                        (selectionChange)="onSourceChange($event)">
+                        <mat-option *ngFor="let source of sourceTypesList" [value]="source.name">
+                            {{source.name}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="sourceTypeControl.invalid">Source Type is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div fxFlex="auto">
+                <mat-form-field class="w-100" [floatLabel]="'always'">
+                    <mat-label>Sink Type</mat-label>
+                    <mat-select placeholder="Please select sink type" formControlName="sinkType" required>
+                        <mat-option *ngFor="let st of sinkTypesList" [value]="st.name">
+                            {{st.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div fxFlex="auto">
+                <mat-form-field class="w-100" [floatLabel]="'always'">
+                    <mat-label>Data Type</mat-label>
+                    <mat-select placeholder="Please select data type" formControlName="dataType" required
+                        (selectionChange)="onDataCombinationChange()">
+                        <mat-option *ngFor="let datatype of dataTypesList" [value]="datatype.name">
+                            {{datatype.name}}
+                        </mat-option> 
+                    </mat-select>
+                    <mat-error *ngIf="dataTypeControl.invalid">Data Type is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div fxFlex="auto">
+                <button type="submit" disabled
+                    [disabled]="!dataSourceForm.valid || showIngestionForm ||isFieldsFetching" mat-raised-button
+                    color="accent" class="mat-elmat-elevation-z11 w-100">Show
+                    Result</button>
+            </div>
+            <div fxFlex="auto"></div>
+        </div>
+    </form>
+</mat-card>
+
+<mat-card class="custom-card" *ngIf="isFieldsFetching || showIngestionForm" style="min-height: 250px;">
+    <app-form *ngIf="showIngestionForm" [fieldsList]="fieldsList"></app-form>
+    <app-preloader *ngIf="isFieldsFetching" [position]="'absolute'"></app-preloader>
+    
+</mat-card>

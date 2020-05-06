@@ -1,0 +1,112 @@
+<main class="flow-section bg-primary vh-100" fxLayout="row" fxLayoutAlign="center center">
+    <div class="stepper-wrapper" fxLayout="column" fxLayoutAlign="center">
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <svg width="171.982" height="120" viewBox="0 0 171.982 130">
+                <g style="transform: translate(10px, 10px);">
+                    <path class="cloud-sh"
+                        d="M88.285,15.333a37.417,37.417,0,0,1,37.184,33.352l.368,3.4a4,4,0,0,0,3.28,3.525l3.372.613A19.143,19.143,0,0,1,143.739,63,20.459,20.459,0,0,1,148.4,75.907,21.168,21.168,0,0,1,142.6,90.253a18.807,18.807,0,0,1-13.519,6.008H27.865a18.486,18.486,0,0,1-13.457-6.039A21.11,21.11,0,0,1,8.614,75.876,21.858,21.858,0,0,1,12.63,63.338,19.844,19.844,0,0,1,22.96,55.644l3.157-1.012a4.015,4.015,0,0,0,2.79-3.74l.061-3.311a14.932,14.932,0,0,1,4.138-9.932,12.643,12.643,0,0,1,9.166-4.108,13.312,13.312,0,0,1,5,.981l3.4,1.379a4,4,0,0,0,4.813-1.441l2.085-3A37.3,37.3,0,0,1,88.285,15.333m0-8.583A45.916,45.916,0,0,0,50.457,26.583a21.729,21.729,0,0,0-8.246-1.625c-11.986,0-21.7,10.545-21.887,22.5C8.093,51.352,0,63.308,0,75.876c0,15.389,12.476,28.968,27.865,28.968H129.117c15.389,0,27.865-13.58,27.865-28.968,0-13.7-9.9-25.78-22.96-28.11A46.034,46.034,0,0,0,88.285,6.75Z"
+                        fill="#3b3b4d" />
+                    <path class="cloud"
+                        d="M88.285,15.333a37.417,37.417,0,0,1,37.184,33.352l.368,3.4a4,4,0,0,0,3.28,3.525l3.372.613A19.143,19.143,0,0,1,143.739,63,20.459,20.459,0,0,1,148.4,75.907,21.168,21.168,0,0,1,142.6,90.253a18.807,18.807,0,0,1-13.519,6.008H27.865a18.486,18.486,0,0,1-13.457-6.039A21.11,21.11,0,0,1,8.614,75.876,21.858,21.858,0,0,1,12.63,63.338,19.844,19.844,0,0,1,22.96,55.644l3.157-1.012a4.015,4.015,0,0,0,2.79-3.74l.061-3.311a14.932,14.932,0,0,1,4.138-9.932,12.643,12.643,0,0,1,9.166-4.108,13.312,13.312,0,0,1,5,.981l3.4,1.379a4,4,0,0,0,4.813-1.441l2.085-3A37.3,37.3,0,0,1,88.285,15.333m0-8.583A45.916,45.916,0,0,0,50.457,26.583a21.729,21.729,0,0,0-8.246-1.625c-11.986,0-21.7,10.545-21.887,22.5C8.093,51.352,0,63.308,0,75.876c0,15.389,12.476,28.968,27.865,28.968H129.117c15.389,0,27.865-13.58,27.865-28.968,0-13.7-9.9-25.78-22.96-28.11A46.034,46.034,0,0,0,88.285,6.75Z"
+                        fill="#4c4a98" />
+                </g>
+            </svg>
+        </div>
+        <!-- cloud services -->
+        <div class="flow-option-box-group" fxLayout="column">
+            <div class="flow-option-box" [@EnterLeave]="'flyIn'" *ngIf="viewIndex===1">
+                <h3 class="flow-selection-heading text-capitalize text-center">select cloud service</h3>
+                <div class="flow-options-group text-primary-light">
+                    <div fxFlexFill>
+                        <label matRipple class="flow-options">
+                            <input type="radio" name="cloud" />
+                            AWS
+                        </label>
+                    </div>
+                    <div fxFlexFill>
+                        <label matRipple class="flow-options" (click)="changeSlide(2)">
+                            <input type="radio" name="cloud" />
+                            Microsoft Azure
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- process -->
+            <div class="flow-option-box" [@EnterLeave]="'flyIn'" *ngIf="viewIndex===2">
+                <h3 class="flow-selection-heading text-capitalize text-center">select Type</h3>
+                <div fxLayout="row wrap" class="flow-options-group text-primary-light">
+                    <div fxFlexFill fxFlex="50%">
+                        <label matRipple class="flow-options" (click)="changeSlide(3)">
+                            <input type="radio" name="process" />
+                            Data Ingestion
+                        </label>
+                    </div>
+                    <div fxFlexFill fxFlex="50%">
+                        <label matRipple class="flow-options">
+                            <input type="radio" name="process" />
+                            ML Analytics
+                        </label>
+                    </div>
+                    <div fxFlexFill fxFlex="50%">
+                        <label matRipple class="flow-options">
+                            <input type="radio" name="process" />
+                            Transformation
+                        </label>
+                    </div>
+                    <div fxFlexFill fxFlex="50%">
+                        <label matRipple class="flow-options">
+                            <input type="radio" name="process" />
+                            Data Visualization
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ingestion type -->
+            <div class="flow-option-box" [@EnterLeave]="'flyIn'" *ngIf="viewIndex===3">
+                <h3 class="flow-selection-heading text-capitalize text-center">select Ingestion Type</h3>
+                <div fxLayout="row wrap" class="flow-options-group text-primary-light">
+                    <div fxFlexFill fxFlex="50%">
+                        <label matRipple class="flow-options" (click)="changeSlide(4)">
+                            <input type="radio" name="ingestionType" />
+                            OnPrem Data Ingestion
+                        </label>
+                    </div>
+                    <div fxFlexFill fxFlex="50%">
+                        <label matRipple class="flow-options">
+                            <input type="radio" name="ingestionType" />
+                            Azure Cloud Data Ingestion
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- ingestion type -->
+            <div class="flow-option-box" [@EnterLeave]="'flyIn'" *ngIf="viewIndex===4">
+                <h3 class="flow-selection-heading text-capitalize text-center">select Data type</h3>
+                <div fxLayout="row wrap" class="flow-options-group text-primary-light">
+                    <div fxFlexFill fxFlex="50%">
+                        <label matRipple class="flow-options">
+                            <input type="radio" name="dataType" />
+                            Structured
+                        </label>
+                    </div>
+                    <div fxFlexFill fxFlex="50%">
+                        <label matRipple class="flow-options">
+                            <input type="radio" name="dataType" />
+                            Unstructured
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a mat-stroked-button class="trans-button mx-auto mb-3 sa-theme-btn-large"
+            [@showNavButton]="viewIndex>1 && viewIndex<4? 'open' : 'closed'" (click)="changeSlide(0)">back</a>
+        <a [routerLink]="[ '/ingestion' ]" *ngIf="viewIndex < 4" mat-stroked-button
+            class="trans-button skip mx-auto sa-theme-btn-large">Skip to Main
+            Page</a>
+        <a [routerLink]="[ '/ingestion' ]" *ngIf="viewIndex === 4" mat-flat-button color="accent"
+            class="mx-auto sa-theme-btn-large">Done</a>
+
+    </div>
+</main>
