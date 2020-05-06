@@ -1,41 +1,44 @@
-<form name="form" class="row" [formGroup]="form" novalidate>
-    <div class="col-sm-4 col-md-4 form-group" *ngFor="let x of fieldsList">
-        <label class="control-label">{{x.label}}
-            <span>
-                <mat-icon class="small">information</mat-icon>
-            </span>
-        </label>
-        <ng-container *ngIf="x.type==='selectString'; then thenTemplate; else elseTemplate">
-        </ng-container>
-        <app-error *ngIf="ingetionFormErrors[x.name] && ingetionFormErrors[x.name].pattern">
-            {{x.errorMsg}}
-        </app-error>
-        <app-error *ngIf="ingetionFormErrors[x.name] && ingetionFormErrors[x.name].required">
-            {{x.name}} is required
-        </app-error>
+<form name="form" [formGroup]="form" novalidate>
+    <div class="row">
+        <div class="col-sm-4 col-md-4 form-group" *ngFor="let x of fieldsList">
+            <label class="control-label">{{x.label}}
+                <span>
+                    <mat-icon class="small">information</mat-icon>
+                </span>
+            </label>
+            <ng-container *ngIf="x.type==='selectString'; then thenTemplate; else elseTemplate">
+            </ng-container>
+            <app-error *ngIf="ingetionFormErrors[x.name] && ingetionFormErrors[x.name].pattern">
+                {{x.errorMsg}}
+            </app-error>
+            <app-error *ngIf="ingetionFormErrors[x.name] && ingetionFormErrors[x.name].required">
+                {{x.name}} is required
+            </app-error>
 
-        <!-- if select -->
-        <ng-template #thenTemplate>
-            <mat-form-field class="w-100">
-                <mat-select formControlName="{{x.name}}" required>
-                    <mat-option *ngFor="let opt of x.allowedValues" [value]="opt">
-                        {{opt}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </ng-template>
-        <!-- if type is string -->
-        <ng-template #elseTemplate>
-            <mat-form-field class="w-100">
-                <input matInput formControlName="{{x.name}}" [type]="x.type === 'secureString' ? 'password' : 'text'"
-                    value="{{x.defaultValue}}" required (focusout)="onIngetionFormValuesChanged()">
-            </mat-form-field>
-        </ng-template>
+            <!-- if select -->
+            <ng-template #thenTemplate>
+                <mat-form-field class="w-100">
+                    <mat-select formControlName="{{x.name}}" required>
+                        <mat-option *ngFor="let opt of x.allowedValues" [value]="opt">
+                            {{opt}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </ng-template>
+            <!-- if type is string -->
+            <ng-template #elseTemplate>
+                <mat-form-field class="w-100">
+                    <input matInput formControlName="{{x.name}}"
+                        [type]="x.type === 'secureString' ? 'password' : 'text'" value="{{x.defaultValue}}" required
+                        (focusout)="onIngetionFormValuesChanged()">
+                </mat-form-field>
+            </ng-template>
+        </div>
     </div>
-
-
-    <div class="col-md-3 m-auto text-center">
-        <button type="submit" class="w-100" mat-raised-button color="accent" [disabled]="form.invalid">Copy
-            Data</button>
+    <div class="row">
+        <div class="col-md-3 m-auto text-center">
+            <button type="submit" class="w-100" mat-raised-button color="accent" [disabled]="form.invalid">Copy
+                Data</button>
+        </div>
     </div>
 </form>

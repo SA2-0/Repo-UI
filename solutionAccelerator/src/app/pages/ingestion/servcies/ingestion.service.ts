@@ -19,6 +19,4 @@ export class IngestionService {
     let options = { headers: headers };
     return this.httpClient.post<AttributeInterface>(`${environment.baseUrl}/DataIngestion`, body, options)
   }
-
-  
 }
