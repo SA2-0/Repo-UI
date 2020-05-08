@@ -7,7 +7,8 @@
   padding: 1px;
   height: 40px;
   position: relative;
-  > span {
+  > label {
+    pointer-events: none;
     top: 0;
     margin: auto;
     display: flex;
@@ -24,13 +25,13 @@
     flex-grow: 1;
     border: 1px solid transparent;
     border-radius: 4px;
-    width: 440px;
+    width: 270px;
     transition: border-color 0.2s ease-in, background-color 0.2s ease-in, width 0.2s ease;
     &:focus {
       outline: none;
       background-color: rgb(240, 240, 247);
       border-color: theme-color(primary-light);
-      width: 540px;
+      width: 440px;
     }
     
   }

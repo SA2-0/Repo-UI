@@ -1,4 +1,4 @@
-<div class="login-box bg-primary  px-2" fxLayout="row" fxLayoutAlign="center center">
+<div class="login-box bg-primary  px-2" fxLayout="column" fxLayoutAlign="center center">
     <mat-card>
         <form>
             <mat-form-field class="w-100" [floatLabel]="'always'">
@@ -9,8 +9,8 @@
                 <mat-label>Password</mat-label>
                 <input type="password" matInput placeholder="Enter your password">
             </mat-form-field>
-            <a [routerLink]="['/flow']" mat-raised-button color="accent">Submit</a>
+            <a [routerLink]="['/flow']" mat-raised-button color="accent" class="px-5">Submit</a>
         </form>
     </mat-card>
+    <div class="text-center small py-3 text-white">YASH Technologies.</div>
 </div>
-

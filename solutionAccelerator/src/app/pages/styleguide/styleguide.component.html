@@ -1,0 +1,111 @@
+<h4 class="mt-0 mb-4">{{title}} Style Guide</h4>
+
+<div class="container-fluide">
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <mat-card>
+                <h6 class="mb-3">Content Placeholder</h6>
+                <app-placeholder></app-placeholder>
+            </mat-card>
+        </div>
+        <div class="col-md-6">
+            <mat-card class="h-100">
+                <h6 class="mb-3">Preloader</h6>
+                <!-- postion: 'static'/'absolute'/'fixed' -->
+                <app-preloader [position]="'static'"></app-preloader>
+            </mat-card>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <mat-card>
+                <h6 class="mb-3">Colors</h6>
+                <div class="d-flex">
+                    <div class="demo-box text-white bg-primary-light">
+                        Primary light
+                    </div>
+                    <div class="demo-box text-white bg-primary">
+                        Primary
+                    </div>
+                    <div class="demo-box text-white bg-primary-dark">
+                        Primary dark
+                    </div>
+                    <div class="demo-box"></div>
+                    <div class="demo-box text-white bg-danger-light">
+                        Danger light
+                    </div>
+                    <div class="demo-box text-white bg-danger">
+                        Danger
+                    </div>
+                    <div class="demo-box text-white bg-danger-dark">
+                        Danger dark
+                    </div>
+
+                </div>
+                <br>
+                <div class="d-flex">
+                    <div class="demo-box text-white bg-secondary-light">
+                        Secondary light
+                    </div>
+                    <div class="demo-box text-white bg-secondary">
+                        Secondary
+                    </div>
+                    <div class="demo-box text-white bg-secondary-dark">
+                        Secondary dark
+                    </div>
+                    <div class="demo-box"></div>
+                    <div class="demo-box text-white bg-success">
+                        Success
+                    </div>
+                    <div class="demo-box text-white bg-info">
+                        Info
+                    </div>
+                    <div class="demo-box text-white bg-warning">
+                        Warning
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col-md-6">
+            <mat-card class="h-100">
+                <h6 class="mb-3">Buttons</h6>
+                <div>
+                    <p>Basic</p>
+                    <button mat-button>Basic</button>
+                    <button mat-button color="primary">Primary</button>
+                    <button mat-button color="accent">Accent</button>
+                    <button mat-button color="warn">Warn</button>
+                    <button mat-button disabled>Disabled</button>
+                    <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+                </div>
+                <div>
+                    <p>Raised</p>
+                    <button mat-raised-button>Basic</button>
+                    <button mat-raised-button color="primary">Primary</button>
+                    <button mat-raised-button color="accent">Accent</button>
+                    <button mat-raised-button color="warn">Warn</button>
+                    <button mat-raised-button disabled>Disabled</button>
+                    <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+                </div>
+                <div>
+                    <p>Stroked</p>
+                    <button mat-stroked-button>Basic</button>
+                    <button mat-stroked-button color="primary">Primary</button>
+                    <button mat-stroked-button color="accent">Accent</button>
+                    <button mat-stroked-button color="warn">Warn</button>
+                    <button mat-stroked-button disabled>Disabled</button>
+                    <a mat-stroked-button href="https://www.google.com/" target="_blank">Link</a>
+                </div>
+                <div>
+                    <p>Flat</p>
+                    <button mat-flat-button>Basic</button>
+                    <button mat-flat-button color="primary">Primary</button>
+                    <button mat-flat-button color="accent">Accent</button>
+                    <button mat-flat-button color="warn">Warn</button>
+                    <button mat-flat-button disabled>Disabled</button>
+                    <a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

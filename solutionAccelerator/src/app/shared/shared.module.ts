@@ -20,11 +20,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { PreloaderComponent } from '@app/components/preloader/preloader.component';
 import { ErrorComponent } from '@app/components/error.component';
- 
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { PlaceholderComponent } from '@app/components/placeholder/placeholder.component';
+
 @NgModule({
   declarations: [
     PreloaderComponent,
-    ErrorComponent
+    ErrorComponent,
+    PlaceholderComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +49,9 @@ import { ErrorComponent } from '@app/components/error.component';
     MatSelectModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTooltipModule,
+    MatSnackBarModule
   ],
   exports: [
     FlexLayoutModule,
@@ -67,7 +73,10 @@ import { ErrorComponent } from '@app/components/error.component';
     ReactiveFormsModule,
     HttpClientModule,
     PreloaderComponent,
-    ErrorComponent
+    ErrorComponent,
+    MatTooltipModule,
+    MatSnackBarModule,
+    PlaceholderComponent
   ]
 })
 export class SharedModule { }

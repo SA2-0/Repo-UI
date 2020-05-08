@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PerfectScrollbarConfigInterface, PerfectScrollbarModule, PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
@@ -14,6 +14,10 @@ import { CloudServiceComponent } from './pages/flow/cloud-service/cloud-service.
 import { FlowComponent } from './pages/flow/flow.component';
 import { ProcessTypeComponent } from './pages/flow/process-type/process-type.component';
 import { SharedModule } from './shared/shared.module';
+import { ServerErrorInterceptor } from './core/interceptor/server-error.Interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { GlobalErrorHandler } from './core/global-error.handler';
+import { AppSettings } from './config/settings/app.settings';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   wheelPropagation: true,
@@ -43,7 +47,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     PerfectScrollbarModule
   ],
   providers: [
-    { provide: PERFECT_SCROLLBAR_CONFIG, useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG }
+    AppSettings,
+    { provide: PERFECT_SCROLLBAR_CONFIG, useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG.handlers },
+    { provide: ErrorHandler, useClass: GlobalErrorHandler },
+    { provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

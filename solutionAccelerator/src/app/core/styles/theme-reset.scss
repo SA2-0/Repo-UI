@@ -10,10 +10,10 @@
   .bg-primary {
     @include _mat-toolbar-color($primaryColor);
   }
-  .bg-accent {
+  .bg-secondary {
     @include _mat-toolbar-color($accentColor);
   }
-  .bg-warn {
+  .bg-danger {
     @include _mat-toolbar-color($warnColor);
   }
   .muted-text {

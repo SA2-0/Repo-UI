@@ -1,10 +1,11 @@
-<form name="form" [formGroup]="form" novalidate>
+<form name="form" [formGroup]="form" novalidate [@SlideInTranstion] autocomplete="off">
     <div class="row">
         <div class="col-sm-4 col-md-4 form-group" *ngFor="let x of fieldsList">
             <label class="control-label">{{x.label}}
-                <span>
-                    <mat-icon class="small">information</mat-icon>
-                </span>
+                <span class="mat-form-field-required-marker">*</span>
+                <mat-icon  [matTooltip]="x.description" matTooltipPosition="above">information
+                </mat-icon>
+
             </label>
             <ng-container *ngIf="x.type==='selectString'; then thenTemplate; else elseTemplate">
             </ng-container>

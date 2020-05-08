@@ -1,0 +1,32 @@
+.static-input {
+  height: 48px;
+  border-radius: 6px;
+}
+.form-group{
+    margin-bottom: 0;
+}
+
+.control-label {
+  height: 15px;
+  border-radius: 3px;
+  width: 50%;
+}
+.control-label,
+.static-input {
+  background-color: rgb(165, 164, 191);
+  animation: fading 1.5s infinite;
+}
+
+@keyframes fading {
+  0% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
+}

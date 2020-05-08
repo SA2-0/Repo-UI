@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { trigger, transition, style, animate, state } from '@angular/animations';
+import { Component, OnInit } from '@angular/core';
 import { ErrorTransition } from '@app/utils/app.animation';
 
 @Component({

@@ -30,14 +30,14 @@
                         (selectionChange)="onDataCombinationChange()">
                         <mat-option *ngFor="let datatype of dataTypesList" [value]="datatype.name">
                             {{datatype.name}}
-                        </mat-option> 
+                        </mat-option>
                     </mat-select>
                     <mat-error *ngIf="dataTypeControl.invalid">Data Type is required</mat-error>
                 </mat-form-field>
             </div>
             <div fxFlex="auto">
                 <button type="submit" disabled
-                    [disabled]="!dataSourceForm.valid || showIngestionForm ||isFieldsFetching" mat-raised-button
+                    [disabled]="!dataSourceForm.valid || showIngestionForm || isFieldsFetching" mat-raised-button
                     color="accent" class="mat-elmat-elevation-z11 w-100">Show
                     Result</button>
             </div>
@@ -46,8 +46,16 @@
     </form>
 </mat-card>
 
-<mat-card class="custom-card" *ngIf="isFieldsFetching || showIngestionForm" style="min-height: 250px;">
-    <app-form *ngIf="showIngestionForm" [fieldsList]="fieldsList"></app-form>
-    <app-preloader *ngIf="isFieldsFetching" [position]="'absolute'"></app-preloader>
-    
+
+<mat-card class="custom-card" *ngIf="isFieldsFetching || showIngestionForm">
+
+    <div class="row" *ngIf="isFieldsFetching && !showIngestionForm">
+        <div class="col-sm-4 col-md-4" *ngFor="let staticField of [1,2,3,4,5,6]; let i"
+            [ngClass]="{'form-group': i <4}">
+            <app-placeholder></app-placeholder>
+        </div>
+    </div>
+
+
+    <app-form *ngIf="showIngestionForm && !isFieldsFetching" [fieldsList]="fieldsList"></app-form>
 </mat-card>

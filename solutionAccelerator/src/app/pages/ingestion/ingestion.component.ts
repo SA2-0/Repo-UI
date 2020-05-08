@@ -1,14 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { IngestionFormInterface, AttributeInterface } from './interfaces/ingestion.interface';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { tap } from 'rxjs/operators';
+import { AttributeInterface, IngestionFormInterface } from './interfaces/ingestion.interface';
 import { IngestionService } from './servcies/ingestion.service';
-import { catchError, map, tap } from 'rxjs/operators';
 
 
-interface Food {
-  value: string;
-  viewValue: string;
-}
 @Component({
   selector: 'app-ingestion',
   templateUrl: './ingestion.component.html',

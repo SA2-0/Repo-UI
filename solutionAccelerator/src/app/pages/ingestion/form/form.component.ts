@@ -1,11 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AttributeInterface } from '../interfaces/ingestion.interface';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { SlideInTranstion } from '@app/utils/app.animation';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  styleUrls: ['./form.component.scss'],
+  animations: [
+    SlideInTranstion
+  ]
 })
 export class FormComponent implements OnInit {
   @Input() fieldsList: AttributeInterface[] = [];

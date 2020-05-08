@@ -14,7 +14,7 @@ export class Settings {
 @Injectable()
 export class AppSettings {
     public settings = new Settings(
-        'Solution Accelerator 2.0',   //app name
+        'Solution Accelerator 2.0', //app name
         true,       //loadingSpinner
         true,       //fixedHeader
         true,       //sidenavIsOpened
